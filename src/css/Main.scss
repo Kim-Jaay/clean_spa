@@ -1,0 +1,8 @@
+.MainVisual {
+
+	position: relative; height: 650px; background: url(../../public/assets/images/main_slider01.jpg)no-repeat center top/cover;
+
+	.MainSlide { position: absolute; inset: 50% auto auto 50%; width: 650px; height: 300px;  transform: translate(0,-50%); margin: 0 0 0 -585px; }
+
+    .boom{position: absolute; inset: 50% auto auto 50%; width: 600px; height: 300px; transform: translate(0,-50%); margin: 0 0 0 50px;}
+}
