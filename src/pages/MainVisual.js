@@ -4,6 +4,7 @@ import 'swiper/css';
 import styled from 'styled-components';
 import '../css/Main.scss'
 import { Autoplay } from "swiper";
+import { Link } from 'react-router-dom';
 
 const MAINSLIDE = [
     { id: 1, title: '아파트입주청소', con: '신축 아파트나 빌라 등 입주 전 상태에서의 실내 청소', des: '보양지 제거, 공사먼지 제거, 오염 제거, 시멘트가루 제거 등 구석구석 세밀하게 청소하는 서비스로 가족의 건강을 위해서 입주 전에 꼭 해야 하는 서비스입니다.' },
@@ -73,6 +74,12 @@ span {
 const MainVisual = () => {
     const [idxn, setIdxn] = useState();
     const MS = useRef(null);
+    const MAINLINK = [
+        { tit: '깔끔이청소 소개', link: '/sub01' },
+        { tit: '아파트 입주청소', link: '/sub02' },
+        { tit: '이사/상가청소', link: '/sub03' },
+        { tit: '청소갤러리', link: '/sub04' },
+    ]
 
     return (
         <section className="MainVisual">
@@ -102,26 +109,53 @@ const MainVisual = () => {
                 }
 
             </Swiper>
-            <Dots className="dots">
+            <div className="slider_etc">
+                <Dots className="dots">
+                    {
+                        MAINSLIDE.map((dot, idx) => {
+                            return (
+                                <li className={idxn === idx && 'on'} onClick={() => { MS.current.swiper.slideTo(idx + 1) }}></li>
+                            )
+                        })
+                    }
+                </Dots>
+                <div className="boom">
+                    <img src={process.env.PUBLIC_URL + '/assets/images/slogan.png'} alt="" />
+                </div>
+                <Arrows>
+                    <i className="xi-angle-left-thin" onClick={() => { MS.current.swiper.slidePrev(); }}></i>
+                    <i className="xi-angle-right-thin" onClick={() => { MS.current.swiper.slideNext(); }}></i>
+                </Arrows>
+                <SlideNum>
+                    0{idxn + 1} / <span>0{MAINSLIDE.length}</span>
+                </SlideNum>
+            </div>
+            <ul className="main_link inner">
+
                 {
-                    MAINSLIDE.map((dot, idx) => {
+                    MAINLINK.map((lnk, idx) => {
                         return (
-                            <li className={idxn === idx && 'on'} onClick={() => { MS.current.swiper.slideTo(idx + 1) }}></li>
+                            <li key={idx}>
+                                <Link to='{lik.link}'>
+                                    <div className="case">
+                                        <span>{lnk.tit}</span>
+                                    </div>
+                                </Link>
+                            </li>
                         )
                     })
                 }
-            </Dots>
-            <div className="boom">
-                <img src={process.env.PUBLIC_URL + '/assets/images/slogan.png'} alt="" />
-            </div>
-            <Arrows>
-                <i className="xi-angle-left-thin" onClick={() => { MS.current.swiper.slidePrev(); }}></i>
-                <i className="xi-angle-right-thin" onClick={() => { MS.current.swiper.slideNext(); }}></i>
-            </Arrows>
-            <SlideNum>
-                0{idxn + 1} / <span>0{MAINSLIDE.length}</span>
-            </SlideNum>
 
+                <li>
+                    <div className="customer">
+                        <strong><a href="tel:010-7578-8546">010-7578-8546</a></strong>
+                        <p>부산 김해 양산 기장 아파트입주청소 이사청소<br />
+                            믿고 맡길 수 있는 청소 전문업체</p>
+                        <i className="xi-user-plus-o"></i>
+                    </div>
+                </li>
+
+            </ul>
         </section >
     )
 }
