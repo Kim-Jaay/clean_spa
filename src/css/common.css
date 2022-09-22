@@ -52,6 +52,7 @@ body {
       line-height: 1;
       letter-spacing: -0.025em;
       color: #444444;
+      word-break: keep-all;
   }
   
   ul,
@@ -78,6 +79,8 @@ body {
       font-size: inherit;
       font-weight: inherit;
   }
+
+  p{line-height: 1.45;}
   
   a {
       color: inherit;
