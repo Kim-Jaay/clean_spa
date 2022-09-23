@@ -17,7 +17,6 @@ const MainContent = ({ word }) => {
                                     {con.des}
                                 </p>
                             </Link>
-
                         )
                     })
 

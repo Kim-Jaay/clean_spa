@@ -10,7 +10,7 @@ const Main = ({ content }) => {
         <main className='Main'>
             <MainVisual word={content} />
             <MainContent word={content} />
-            <Customer />
+
         </main>
     )
 }

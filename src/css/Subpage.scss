@@ -1,0 +1,59 @@
+.Subpage {
+
+	.sub {
+		display: flex;
+
+		aside { width: 400px; border-left: 1px solid #ddd; min-height: 500px; padding: 50px 0 0 50px; }
+		article { flex: 1; padding: 50px 50px 50px 0 ; }
+	}
+	.nav_bar { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background: #f4f4f4; text-align: right; line-height: 40px; }
+}
+.aside_lnb {
+	font-size: 15px; font-weight: 500; margin: 0 0 80px 0;
+
+	li {
+		line-height: 40px;
+
+		a {
+			display: block; border-bottom: 1px solid #ddd;
+
+			&::before { content: '\e93e'; font-family: xeicon; font-size: 8px; vertical-align: middle; margin-right: 10px; }
+			&.active { padding: 0 0 0 15px; color: white; background: linear-gradient(45deg, #F2B749, #D9BBA0); border-radius: 10px; border-bottom: 1px solid transparent; }
+		}
+	}
+}
+.side_customer {
+	text-align: right;
+
+	img { margin: 0 0 50px 0; }
+	strong { font-size: 20px; font-weight: 700; }
+	hr { margin: 10px 0; border-top: 2px solid #f2b749; }
+}
+.Article {
+	.tit {
+		line-height: 45px; border-bottom: 1px solid #ddd; margin: 0 0 50px 0;
+
+		strong { font-size: 20px; font-weight: 700; }
+	}
+	.bg { position: relative; height: 350px; background: url(../../public/assets/images/main_slider01.jpg)no-repeat right top/cover ; border-left: 5px solid #F2B749; padding: 100px 0 0 100px; margin: 0 0 100px 0; }
+	h2 { line-height: 90px; font-size: 50px; font-weight: 800; background: linear-gradient(to right top, #0a96ba, #032777, #333333); color: transparent; background-clip: text; }
+	.sub_tit {
+		font-size: 20px; font-weight: 600; margin: 0 0 20px 0;
+
+		&::after { content: ''; display: block; width: 50px; height: 1px; background: #f2b749; margin-top: 20px; }
+	}
+	.sub_des { margin: 0 0 50px 0; }
+	.sub_img { display: flex; gap: 15px; margin: 0 0 50px 0}
+	.sub_service {
+		li {
+			position: relative; padding: 0 0 0 20px ; line-height: 40px; border-bottom: 1px solid #ddd;
+
+			&::before { content: '' ; position: absolute; inset: 18px auto auto 0; width: 3px; height: 3px; background: #F2B749; }
+		}
+	}
+}
+
+.Footer{
+	border-top: 1px solid #ddd; padding: 50px 0; text-align: center; background: #fafafa; line-height: 22px; font-size: 14px;
+	li{display: inline-block; margin: 0 5px;}
+}
